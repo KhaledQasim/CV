@@ -6,6 +6,7 @@ import Works from "./components/Works";
 import "./App.css";
 import Particle from "./components/Particle";
 import Navbar from "./components/Navbar";
+import Navbar2 from "./components/Navbar2";
 import { atom } from "jotai";
 import { useRef } from "react";
 import ParticleSkills from "./components/ParticleSkills";

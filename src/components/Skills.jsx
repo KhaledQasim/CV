@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import styled from "styled-components";
-const ParticleSkills = React.lazy(() => import("./ParticleSkills"));
-import LoadingFallBack from "./subWorks/models/LoadingFallBack";
+import ParticleSkills from "./ParticleSkills";
+
 const Section = styled.div`
   display: flex;
   height: 100vh;
@@ -15,7 +15,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  margin-top: 25%;
+  
   display: flex;
   position: absolute;
 
@@ -47,9 +47,8 @@ const ListItem = styled.li`
 const Skills = () => {
   return (
     <Section id="SkillsParticlesSection">
-      <Suspense fallback={<LoadingFallBack>Normal</LoadingFallBack>}>
-        <ParticleSkills />
-      </Suspense>
+      <ParticleSkills />
+
       <Container>
         <List>
           <ListItem>React</ListItem>

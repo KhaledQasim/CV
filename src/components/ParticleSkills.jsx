@@ -12,7 +12,7 @@ const Particle = () => {
 
   const particlesLoaded = useCallback(async (container) => {
     await container;
-    console.log(container.options.particles.number);
+    // console.log(container.options.particles.number);
     setContainer(container);
   }, []);
   const [Container, setContainer] = useState("");

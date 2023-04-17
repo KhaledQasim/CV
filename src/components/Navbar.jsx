@@ -5,6 +5,7 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
+
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -13,8 +14,10 @@ const Section = styled.div`
 const Container = styled.div`
   width: 1400px;
   display: flex;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 10px 0px;
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -26,6 +29,9 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+  @media only screen and (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 const Logo = styled.img`
@@ -37,12 +43,15 @@ const List = styled.ul`
   gap: 20px;
   list-style: none;
   @media only screen and (max-width: 768px) {
-    display: none;
+    gap: 10px;
   }
 `;
 
 const ListItem = styled.li`
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    color: #8800ff;
+  }
 `;
 
 const Icons = styled.div`
@@ -64,7 +73,13 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    width: 80px;
+    border-radius: 100px;
+  }
 `;
+
+
 
 const Navbar = () => {
   const handleClickScroll = (id) => {
@@ -78,18 +93,21 @@ const Navbar = () => {
   return (
     <Section>
       <Container>
+       
         <Links>
           <Logo src="/img/logo.png" />
           <List>
             <ListItem onClick={() => handleClickScroll("Hero")}>Home</ListItem>
-            <ListItem onClick={() => handleClickScroll("Who")}>About Me</ListItem>
+            <ListItem onClick={() => handleClickScroll("Who")}>
+              About Me
+            </ListItem>
             <ListItem onClick={() => handleClickScroll("Work")}>Work</ListItem>
-            <ListItem onClick={() => handleClickScroll("Contact")}>Contact</ListItem>
+            <ListItem onClick={() => handleClickScroll("Contact")}>
+              Contact
+            </ListItem>
           </List>
         </Links>
         <Icons>
-          
-
           <Button
             onClick={() =>
               (location.href =

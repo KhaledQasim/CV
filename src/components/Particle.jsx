@@ -20,12 +20,12 @@ const Particle = () => {
     if (isMobile) {
       SetParticleValue(20);
       SetParticleValueLimit(35);
-      console.log("Inside IF",ParticleValue);
+      
     }
     else {
       SetParticleValue(35);
       SetParticleValueLimit(60);
-      console.log("else");
+     
     }
     
   }, []);
@@ -39,7 +39,7 @@ const Particle = () => {
 
   const particlesLoaded = useCallback(async (container) => {
     await container;
-    console.log(container.options.particles.number);
+    // console.log(container.options.particles.number);
     setContainer(container);
   }, []);
 

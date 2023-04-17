@@ -1,9 +1,10 @@
 import { useAtom } from "jotai";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { SubWork, showSubWork, showSubWorkContent } from "../../App";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import LoadingFallBack from "./models/LoadingFallBack";
 const GitHub = "https://github.com/KhaledQasim/Team29Backend";
 
 const Section = styled.div`
@@ -84,7 +85,6 @@ const TextBoxInfo = styled.div`
   /* background-color: #ffffffb4; */
   color: #00ffe1;
 
-
   font-size: 35px;
 
   @media only screen and (max-width: 768px) {
@@ -118,7 +118,10 @@ const SpringBootJWT = () => {
           </ContainerTop>
 
           <ContainerInfo>
-            <TextBoxInfo>Only the register/login APIs are shown below, the code also does API authorization according to role of (admin||user).</TextBoxInfo>
+            <TextBoxInfo>
+              Only the register/login APIs are shown below, the code also does
+              API authorization according to role of (admin||user).
+            </TextBoxInfo>
           </ContainerInfo>
 
           <Container>
@@ -127,6 +130,7 @@ const SpringBootJWT = () => {
             >
               Link To Code
             </TextBox>
+
             <Carousel
               onClickItem={(index, data) =>
                 window.open(
@@ -143,12 +147,15 @@ const SpringBootJWT = () => {
               stopOnHover={true}
               animationHandler="slide"
             >
+              
               <div>
                 <img src="/img/Works/SpringBootJwt/PostRegister.png" />
                 <p className="legend">
                   Register a new user, returns JWT token if successful.
                 </p>
               </div>
+
+              
 
               <div>
                 <img src="/img/Works/SpringBootJwt/JwtInfo.png" />

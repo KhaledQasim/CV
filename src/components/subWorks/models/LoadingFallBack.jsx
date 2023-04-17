@@ -4,15 +4,22 @@ import React from 'react';
 
 const LoadingFallBack = (props) => {
     if (props.children === "Normal") {
-        console.log(props.children)
+        
          return (
         <div style={{color:"white"}}>
             Loading...
         </div>
     );  
     }
+    if (props.children === "NormalImage") { 
+        return (
+            <div style={{color:"white"}}>
+                Image...
+            </div>
+        );  
+    }
     else {
-        console.log(props.children)
+       
         return (
         
       
